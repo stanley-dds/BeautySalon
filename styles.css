@@ -1,0 +1,453 @@
+/* Убираем все отступы и марджины */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+
+
+/* Фиксированный меню хедер */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Выравнивание кнопок вниз */
+
+    padding: 1rem 0;
+    /*background-color: rgba(0, 0, 0, 0.8); */ /* Прозрачный черный фон */
+
+    background: transparent; /* Полностью прозрачный фон */
+    box-shadow: none; /* Убираем возможную тень или белую полоску */
+    
+}
+
+/* Навигация в хедере */
+header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav a {
+    color: white; /* Текст кнопок белый */
+    font-family: 'Roboto', sans-serif; /* Спокойный, тонкий шрифт */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Тень для текста */
+    transition: color 0.3s, opacity 0.3s;
+    opacity: 1;
+    margin-top: 1.5rem; /* Опускаем кнопки вниз */
+}
+
+/* Прозрачные кнопки */
+header.scrolled nav a {
+    opacity: 0.5; /* Уменьшаем прозрачность */
+}
+
+header.scrolled nav a:hover {
+    opacity: 1; /* При наведении восстанавливаем видимость */
+}
+
+/* Стиль при наведении на кнопки */
+header nav a:hover {
+    color: limegreen;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для других секций */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    background-color: #444;
+    margin: 0 0;
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+
+
+/* Секция 1 с изображением */
+#section1 {
+    height: 100vh; /* Занимает всю высоту экрана */
+    background: url('main.jpg') no-repeat center center/cover; /* Фоновое изображение */
+    background-attachment: fixed; /* При прокрутке изображение остаётся неподвижным */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 0; /* Убираем любые внешние отступы */
+    margin: 0; /* Убираем любые внешние отступы */
+    padding: 0; /* Убираем паддинги */
+}
+
+/* Убираем отступы сверху */
+#section1 h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#section1 p {
+    font-size: 1.5rem;
+}
+
+
+/* Стрелочка вниз */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    z-index: 10; /* Поверх остальных элементов */
+}
+
+.scroll-down:hover {
+    color: limegreen;
+}
+
+/* Анимация стрелочки */
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, -10px);
+    }
+}
+
+
+
+/* СЕКЦИЯ УСЛУГ */
+
+
+
+
+/* Секция 2 с фоновым изображением */
+#section2 {
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    background: url('ground2.jpg') no-repeat center center/cover; /* Фоновое изображение */
+    background-attachment: fixed; /* Фиксированное изображение при прокрутке */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Выравниваем контент вправо */
+    padding: 50px;
+}
+
+#section2 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Стили для контейнера услуг */
+.services {
+    display: flex;
+    flex-wrap: wrap; /* Делаем элементы адаптивными */
+    max-width: 50%; /* Ограничиваем ширину услуг, чтобы они были справа */
+    gap: 20px;
+    justify-content: flex-end; /* Выравнивание услуг вправо */
+}
+
+/* Стили для отдельных элементов услуг */
+.service-item {
+    width: 45%; /* Ширина каждого элемента, чтобы два элемента помещались в один ряд */
+    text-align: left; /* Текст внутри элемента выравнивается влево */
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+    color: rgb(0, 0, 0);
+}
+
+.service-item img {
+    width: 100%; /* Изображение растягивается по ширине элемента */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.service-item img:hover {
+    transform: scale(1.05); /* Эффект увеличения при наведении */
+}
+
+.service-item p {
+    font-size: 0.9rem; /* Уменьшаем шрифт для описания */
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+/* Секция 3 с изображениями */
+#section3 {
+    display: flex; /* Используем Flexbox для равномерного распределения изображений */
+    justify-content: space-between; /* Равномерное распределение */
+    align-items: center; /* Центрируем изображения по вертикали */
+    height: 100vh; /* Высота секции на весь экран */
+    margin: 0;
+    padding: 0;
+    background: none; /* Убираем фон */
+    position: relative; /* Для размещения текста поверх */
+    overflow: hidden; /* Скрываем все, что выходит за пределы секции */
+}
+
+/* Контейнер для изображений */
+#section3 .image-container {
+    flex: 1; /* Все изображения занимают равное пространство */
+    height: 100%; /* Высота изображений равна высоте секции */
+    overflow: hidden; /* Скрываем лишнее */
+}
+
+/* Изображения */
+#section3 .image-container img {
+    width: 100%; /* Ширина изображения равна ширине контейнера */
+    height: 100%; /* Высота изображения равна высоте контейнера */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+    display: block;
+    transition: transform 0.5s ease; /* Плавный эффект увеличения */
+}
+
+
+#section3 .image-container img:hover {
+    transform: scale(1.05); /* Эффект увеличения при наведении */
+}
+
+
+/* Текст "You deserve it" поверх изображений */
+.section-text {
+    position: absolute; /* Абсолютное позиционирование поверх секции */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Для точного центрирования */
+    font-size: 10rem; /* Увеличиваем размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    text-transform: uppercase; /* Заглавные буквы */
+    font-family: 'Arial', sans-serif; /* Ненапряжный шрифт */
+    text-align: center; /* Текст выравнивается по центру */
+    color: transparent; /* Прозрачный текст */
+    text-stroke: 3px black; /* Чёрный контур текста */
+    -webkit-text-stroke: 3px black; /* Чёрный контур текста для WebKit */
+    white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+
+
+
+
+
+
+
+
+/* Секция 4 с фоновым изображением */
+#section4 {
+    min-height: 100vh; /* Высота секции */
+    background: url('ground2R.jpg') no-repeat center center/cover; /* Фоновое изображение */
+    background-attachment: fixed; /* Фиксированное изображение при прокрутке */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Выравниваем контент влево */
+    padding: 50px; /* Внутренние отступы */
+}
+
+/* Заголовок секции */
+#section4 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Контейнер для изображений */
+.images-container {
+    display: flex;
+    flex-wrap: wrap; /* Изображения размещаются в два ряда */
+    max-width: 50%; /* Ограничиваем ширину контейнера */
+    gap: 40px; /* Расстояние между изображениями */
+    justify-content: flex-start; /* Выравнивание изображений по левому краю */
+}
+
+/* Стили для изображений */
+.small-image {
+    width: 45%; /* Каждое изображение занимает 45% ширины контейнера */
+    text-align: left; /* Выравнивание текста внутри элемента */
+    font-size: 0.9rem;
+    color: rgb(0, 0, 0);
+}
+
+.small-image img {
+    width: 100%; /* Изображение занимает всю ширину элемента */
+    border-radius: 10px; /* Закругленные углы */
+    margin-bottom: 10px; /* Отступ под изображением */
+    transition: transform 0.3s;
+}
+
+.small-image img:hover {
+    transform: scale(1.05); /* Эффект увеличения при наведении */
+}
+
+.small-image p {
+    font-size: 0.9rem; /* Размер шрифта описания */
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#section3 {
+    background-color: #888;
+}
+
+#section4 {
+    background-color: #aaa;
+}
+
+
+/* Контент секции 
+.content {
+    padding: 50px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top: 50px; 
+}*/
+
+
+/* Секция с видеофоном */
+#content {
+    position: relative;
+    min-height: 100vh; /* Высота секции на весь экран */
+    overflow: hidden; /* Скрываем лишние части видео */
+}
+
+
+/* Видео на фоне */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Растягиваем видео, сохраняя пропорции */
+    z-index: -1; /* Видео располагается под контентом */
+}
+
+/* Контактные данные */
+.contact-details {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: black; /* Чёрный текст */
+    font-size: 0.8rem; /* Маленький шрифт */
+    line-height: 1.5; /* Удобочитаемость текста */
+    padding: 0; /* Убираем внутренние отступы */
+    background: none; /* Убираем фон */
+    border: none; /* Убираем рамку */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стрелочка */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    animation: bounce 1.5s infinite;
+}
+
+.scroll-to-top:hover {
+    background: limegreen;
+}
+
+/* Анимация стрелочки */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

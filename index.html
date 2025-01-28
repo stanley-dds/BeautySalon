@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Top</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Невидимый Sticky Header -->
+    <header>
+        <nav>
+            <a href="#section2">Услуги</a>
+            <a href="#section3">Галлерея</a>
+            <a href="#section4">Безопасность и сервис</a>
+            <a href="#content">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- SECTION УСЛУГИ -->
+
+    <section id="section1">
+        <h1>Beauty salon</h1>
+
+        <!-- Стрелочка вниз для перехода к секции 2 -->
+        <div class="scroll-down" id="scrollDown">&#8595;</div>
+    </section>
+
+
+
+    <section id="section2">
+        <h1>Наши услуги</h1>
+        <div class="services">
+            <!-- Услуги для женщин -->
+            <div class="service-item">
+                <img src="men.png" alt="Услуги для женщин">
+                <p>Для мужчин: барберинг, массаж, маникюр и уход за кожей.</p>
+            </div>
+    
+            <!-- Услуги для мужчин -->
+            <div class="service-item">
+                <img src="women.png" alt="Услуги для мужчин">
+                <p>Для женщин: стрижки, укладки, окрашивание, маникюр и уход за кожей.</p>
+            </div>
+    
+            <!-- Услуги для детей -->
+            <div class="service-item">
+                <img src="girl.png" alt="Услуги для детей">
+                <p>Для детей: стрижки, праздничные прически, уход за кожей.</p>
+            </div>
+    
+            <!-- Массаж -->
+            <div class="service-item">
+                <img src="massage.png" alt="Массаж">
+                <p>Массаж: классический, лечебный, расслабляющий и ароматерапия.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section3">
+        
+        <!-- Общий текст поверх изображений -->
+        <div class="section-text">You deserve it</div>
+
+            <!-- Первое изображение -->
+            <div class="image-container">
+                <img src="s3_1.jpg" alt="Услуга 1">
+            </div>
+        
+            <!-- Второе изображение -->
+            <div class="image-container">
+                <img src="s3_2.jpg" alt="Услуга 2">
+            </div>
+        
+            <!-- Третье изображение -->
+            <div class="image-container">
+                <img src="s3_3.jpg" alt="Услуга 3">
+            </div>
+        
+            <!-- Четвертое изображение -->
+            <div class="image-container">
+                <img src="s3_4.jpg" alt="Услуга 4">
+            </div>
+
+            <!-- Стрелочка вниз -->
+    <div class="scroll-down" id="scrollDownToSection4">&#8595;</div>
+    </section>
+    
+
+
+    <section id="section4">
+        <div class="images-container">
+            <!-- Первое изображение -->
+            <div class="small-image">
+                <img src="steril.png" alt="Маленькое изображение 1">
+                <p>Мастер обязательно дезинфицирует инструменты после каждого клиента. 
+                    Инструменты проходят механическую очистку, химическую обработку и стерилизацию. 
+                    Щётки и расчёски промываются, обеззараживаются, сушатся и упаковываются индивидуально.</p>
+
+            </div>
+            <!-- Второе изображение -->
+            <div class="small-image">
+                <img src="protection.png" alt="Маленькое изображение 2">
+                <p>Клиентам предоставляют средства индивидуальной защиты, а помещения проветриваются и оснащены очистителями воздуха. </p>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="content" class="content">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="final.mp4" type="video/mp4">
+            Ваш браузер не поддерживает HTML5 видео.
+        </video>
+        <div class="contact-details">
+            <p>
+                Телефон: +380965778654<br>
+                Email: beautyKiev@gmail.com<br>
+                Адрес: ул. Соборная, 46, г. Киев
+            </p>
+        </div>
+    </div>
+    
+    
+
+    <!-- Стрелочка -->
+    <div class="scroll-to-top" id="scrollToTop">&#8593;</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
