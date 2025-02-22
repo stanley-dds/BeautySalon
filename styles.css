@@ -154,7 +154,7 @@ section {
 /* Секция 2 с фоновым изображением */
 #section2 {
     min-height: 100vh; /* Занимает всю высоту экрана */
-    background: url('ground2.jpg') no-repeat center center/cover; /* Фоновое изображение */
+    background: url('ground2.jpeg') no-repeat center center/cover; /* Фоновое изображение */
     background-attachment: fixed; /* Фиксированное изображение при прокрутке */
     color: rgb(0, 0, 0);
     text-align: center;
@@ -274,7 +274,7 @@ section {
 /* Секция 4 с фоновым изображением */
 #section4 {
     min-height: 100vh; /* Высота секции */
-    background: url('ground2R.jpg') no-repeat center center/cover; /* Фоновое изображение */
+    background: url('ground2R.jpeg') no-repeat center center/cover; /* Фоновое изображение */
     background-attachment: fixed; /* Фиксированное изображение при прокрутке */
     color: rgb(0, 0, 0);
     text-align: center;

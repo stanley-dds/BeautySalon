@@ -74,6 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    document.addEventListener("DOMContentLoaded", () => {
+        function checkMobileVersion() {
+            if (/Mobi|Android|iPhone|iPad/.test(navigator.userAgent)) {
+                window.location.href = "mIndex.html"; // Перенаправляем на мобильную версию
+            }
+        }
+    
+        checkMobileVersion();
+    });
+
 });
 
 

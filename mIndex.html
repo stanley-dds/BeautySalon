@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мобильная версия</title>
+    <link rel="stylesheet" href="mStyles.css">
+    <script src="mScript.js" defer></script>
+</head>
+<body>
+
+    <!-- Подключение Swiper.js (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <!-- Sticky Header -->
+    <header>
+        <a href="#hero" class="logo">
+            <img src="logo.png" alt="Логотип">
+        </a>
+
+        <nav>
+            <a href="#services">Услуги</a>
+            <a href="#gallery">Галерея</a>
+            <a href="#safety">Безопасность</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+
+
+
+
+     <!-- Заглавная секция -->
+     <section id="hero" class="full-section">
+        <div class="hero-content">
+            <h1 class="fade-in">Добро пожаловать в наш салон</h1>
+            <p class="fade-in">Искусство красоты и ухода для вас</p>
+        </div>
+         <!-- Стрелочка вниз -->
+         <div class="scroll-down hidden" id="scrollDown">&#8595;</div>
+    </section>
+
+
+
+
+
+    <section id="services" class="full-section">
+        <h2>Наши услуги</h2>
+    
+        <!-- Контейнер карусели -->
+        <div class="carousel-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Слайд 1 -->
+                    <div class="swiper-slide">
+                        <img src="men.png" alt="Услуга 1">
+                        <p>Описание услуги 1</p>
+                    </div>
+                    <!-- Слайд 2 -->
+                    <div class="swiper-slide">
+                        <img src="women.png" alt="Услуга 2">
+                        <p>Описание услуги 2</p>
+                    </div>
+                    <!-- Слайд 3 -->
+                    <div class="swiper-slide">
+                        <img src="girl.png" alt="Услуга 3">
+                        <p>Описание услуги 3</p>
+                    </div>
+                    <!-- Слайд 4 -->
+                    <div class="swiper-slide">
+                        <img src="massage.png" alt="Услуга 4">
+                        <p>Описание услуги 4</p>
+                    </div>
+                </div>
+    
+                <!-- Стрелки управления -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="gallery" class="full-section">
+        <h2>Галерея</h2>
+    </section>
+
+
+    <section id="safety" class="full-section">
+        <h2>Безопасность</h2>
+    </section>
+
+
+    <section id="contacts" class="full-section">
+        <h2>Контакты</h2>
+    </section>
+
+
+    <!-- Стрелочка вверх -->
+    <div class="scroll-up hidden" id="scrollUp">&#8593;</div>
+
+
+</body>
+</html>

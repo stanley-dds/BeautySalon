@@ -1,0 +1,270 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    scroll-snap-type: y mandatory; /* Принудительная прокрутка по секциям */
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* Sticky Header */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between; /* Логотип слева, кнопки справа */
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Логотип */
+.logo img {
+    width: 40px; /* Размер логотипа */
+    height: auto;
+    cursor: pointer;
+}
+
+
+/* Кнопки в хедере */
+header nav {
+    display: flex;
+    gap: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem; /* Мелкий шрифт */
+    padding: 5px 10px;
+    transition: opacity 0.3s;
+}
+
+header nav a:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+/* Заглавная секция */
+#hero {
+    background: url('main.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+/* Контент в заглавной секции */
+.hero-content {
+    font-family: "Lora", serif;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* Стрелочка вниз */
+.scroll-down {
+    position: absolute;
+    bottom: 50px; /* Отступ от нижнего края */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+}
+
+/* Стрелочка вверх */
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Показываем элементы */
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Мелкий, элегантный текст */
+.hero-content h1 {
+    font-size: 1.8rem; /* Уменьшен размер шрифта */
+    margin-bottom: 8px;
+}
+
+.hero-content p {
+    font-size: 1rem; /* Сделали текст тоньше и элегантнее */
+}
+
+/* Плавное появление после таймера */
+.hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+/* Секция "Услуги" */
+#services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #f4f4f4;
+    background: url('mServices.jpeg') no-repeat center center/cover;
+    padding: 50px 20px;
+}
+
+/* Заголовок секции */
+#services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 10px rgba(104, 101, 101, 0.8);
+}
+
+/* Контейнер карусели */
+.carousel-container {
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Контейнер для слайдов */
+.swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Слайды */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Изображения в карусели (75% высоты секции) */
+.swiper-slide img {
+    width: auto;
+    height: 75vh; /* 75% высоты секции */
+    max-height: 600px; /* Ограничение максимальной высоты */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Текст под изображениями */
+.swiper-slide p {
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/* Стрелки навигации */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: wiggle 1.5s infinite ease-in-out; /* Анимация шатания */
+}
+
+/* Размещение стрелок */
+.swiper-button-prev {
+    left: -10px;
+}
+
+.swiper-button-next {
+    right: -10px;
+}
+
+/* Отключаем вертикальный скролл при свайпе по карусели */
+.swiper {
+    touch-action: pan-y;
+}
+
+/* Анимация "шатания" стрелок */
+@keyframes wiggle {
+    0%, 100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-50%) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-50%) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-50%) rotate(-5deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Секции */
+.full-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start; /* Остановка прокрутки на каждой секции */
+    background: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+.full-section h2 {
+    font-size: 2rem;
+    color: black;
+}
