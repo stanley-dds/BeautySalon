@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // 1. Таймер для появления заглавного текста и стрелочки вниз через 2 секунды
+    // Таймер появления заглавного текста и стрелочки вниз через 2 секунды
     setTimeout(() => {
         document.querySelector(".hero-content").classList.add("visible");
         document.getElementById("scrollDown").classList.add("visible");
     }, 2000);
 
-    // 2. Плавная прокрутка к секциям при нажатии на кнопку в хедере
+    // Плавная прокрутка к секциям при нажатии на кнопку в хедере
     document.querySelectorAll("header nav a, .logo").forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -19,15 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 3. Прокрутка вниз при нажатии на стрелку в заглавной секции
+    // Прокрутка вниз при нажатии на стрелку
     document.getElementById("scrollDown").addEventListener("click", () => {
-        let nextSection = document.querySelector("#services");
-        nextSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.querySelector("#services").scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
-    // 4. Показываем стрелку вверх при прокрутке вниз
+    // Показываем стрелку вверх при прокрутке вниз
     const scrollUpButton = document.getElementById("scrollUp");
-    
     window.addEventListener("scroll", () => {
         if (window.scrollY > window.innerHeight) {
             scrollUpButton.classList.add("visible");
@@ -36,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 5. Прокрутка вверх при нажатии на стрелку вверх
+    // Прокрутка вверх при нажатии на стрелку вверх
     scrollUpButton.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // 6. Принудительная фиксация на секциях при остановке прокрутки
+    // Принудительная фиксация на секциях при остановке прокрутки
     let scrollTimeout;
     document.addEventListener("scroll", () => {
         clearTimeout(scrollTimeout);
@@ -64,17 +61,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 200);
     });
 
-    // 7. Инициализация карусели Swiper.js
-    new Swiper('.swiper', {
-        slidesPerView: 1, // Показывает 1 изображение за раз
-        spaceBetween: 20, // Отступ между слайдами
-        loop: true, // Зацикленная прокрутка
+    // === Новый код: Плавное изменение цвета кнопки при клике ===
+    document.querySelectorAll("header nav a").forEach(button => {
+        button.addEventListener("click", function () {
+            let originalColor = this.style.color; // Сохраняем текущий цвет
+            this.style.color = "green"; // Меняем цвет на зеленый
+            setTimeout(() => {
+                this.style.color = originalColor; // Возвращаем стандартный цвет
+            }, 500); // Полсекунды
+        });
+    });
+
+    // === Исправленный код для анимации карусели ===
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        allowTouchMove: true, // Разрешаем свайпы
-        touchStartPreventDefault: false, // Отключаем вертикальный скролл при горизонтальном свайпе
+        allowTouchMove: true,
+        on: {
+            slideChangeTransitionEnd: function () {
+                document.querySelectorAll(".swiper-slide").forEach(slide => {
+                    slide.classList.remove("active");
+                });
+                document.querySelector(".swiper-slide-active").classList.add("active");
+            }
+        }
     });
 
+    // Запускаем анимацию для первого слайда при загрузке
+    document.querySelector(".swiper-slide").classList.add("active");
 });
